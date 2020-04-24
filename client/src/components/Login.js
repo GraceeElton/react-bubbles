@@ -27,7 +27,7 @@ const Login = (props) => {
       .post("/api/login", newLogin)
       .then((res) => {
         console.log({ res });
-        localStorage.setItem("token", JSON.stringify(res.data.payload));
+        localStorage.setItem("token", res.data.payload);
         props.history.push("/BubblePage");
       })
       .catch((error) => {
